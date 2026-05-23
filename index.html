@@ -12,7 +12,8 @@ h2 { margin-top: 30px; }
 <body>
 
 <h1>ApplyKit Privacy Policy</h1>
-<p><em>Last updated: May 22, 2026</em></p>
+<p><em>Last updated: May 22, 2026</em><br>
+<em>Next scheduled review: August 22, 2026</em></p>
 
 <h2>Overview</h2>
 <p>ApplyKit is a Chrome extension that helps users track job applications by automatically capturing application data when they apply through supported job sites. This privacy policy explains how ApplyKit handles user data.</p>
@@ -25,18 +26,18 @@ h2 { margin-top: 30px; }
 <ul>
   <li>boards.greenhouse.io, job-boards.greenhouse.io</li>
   <li>jobs.lever.co</li>
-  <li>jobs.ashbyhq.com, www.ashbyhq.com</li>
-  <li>www.linkedin.com/jobs/</li>
-  <li>www.indeed.com, indeed.com</li>
-  <li>*.myworkdayjobs.com</li>
+  <li>jobs.ashbyhq.com, ashbyhq.com (careers section only)</li>
+  <li>linkedin.com (jobs section only)</li>
+  <li>indeed.com</li>
+  <li>*.myworkdayjobs.com (all tenants)</li>
   <li>jobs.smartrecruiters.com</li>
-  <li>*.icims.com</li>
+  <li>*.icims.com (all tenants)</li>
 </ul>
 <p>On these sites only, ApplyKit listens for clicks on Apply / Submit Application buttons and reads visible page metadata (job title, company name, posted URL). This data is stored locally on the user's device and not transmitted anywhere.</p>
 
 <h2>Data Transmission — Free vs Pro</h2>
 <p>The free version of ApplyKit makes <strong>zero</strong> network requests of its own. No analytics, no telemetry, no external API calls.</p>
-<p>The Pro version validates the user's license periodically (approximately once per week) by sending the following to ApplyKit's license server:</p>
+<p>The Pro version validates the user's license periodically (approximately once per month) by sending the following to ApplyKit's license server:</p>
 <ul>
   <li>The user's license key</li>
   <li>A randomly generated install identifier (used to enforce per-license activation limits)</li>
@@ -45,6 +46,10 @@ h2 { margin-top: 30px; }
 
 <h2>Data Sharing</h2>
 <p>ApplyKit does not share user data with third parties. Even for Pro users, the license server receives only the license key and install identifier described above—nothing about your job applications, the sites you visit, or who you are.</p>
+
+<h2>Integration with ReplyKit</h2>
+<p>If you have both ApplyKit and ReplyKit installed, ApplyKit writes the company name and job role from your most recent application to a session-scoped storage area that ReplyKit can read. This allows ReplyKit's templates to auto-fill these values when you write follow-up messages.</p>
+<p>The shared data is limited to company name and role only, never includes application status, notes, or any other tracked content, and is cleared when you close Chrome. If you do not have ReplyKit installed, no shared data is written.</p>
 
 <h2>User Control</h2>
 <p>Users have full control over their data:</p>
@@ -62,14 +67,14 @@ h2 { margin-top: 30px; }
 <ul>
   <li><strong>storage:</strong> To save applications, settings, and license state locally on your device</li>
   <li><strong>sidePanel:</strong> To open ApplyKit as a Chrome side panel when you select that option</li>
-  <li><strong>activeTab:</strong> To read the URL and title of your current tab when you open the popup, so ApplyKit can detect job pages on unsupported sites and offer to add them manually</li>
-  <li><strong>alarms:</strong> To schedule periodic license validation for Pro users</li>
+  <li><strong>activeTab:</strong> To read the URL and title of your current tab when you click the ApplyKit icon. Used to detect job-related pages on sites we don't auto-capture (such as company career pages that white-label a major ATS), so we can offer to add them manually. This permission only activates when you open the extension; ApplyKit cannot read your tabs in the background.</li>
+  <li><strong>alarms:</strong> To schedule the periodic license validation described above for Pro users. The alarms permission is used only for this scheduled check; no other timed events occur in the background.</li>
   <li><strong>Host permissions on the supported job sites listed above:</strong> To run the auto-capture content scripts that detect when you apply</li>
 </ul>
 <p>ApplyKit does <strong>not</strong> request blanket access to all websites. Host permissions are narrowly scoped to the supported job sites listed above.</p>
 
 <h2>Changes to This Policy</h2>
-<p>If this policy changes, the updated version will be posted at this URL.</p>
+<p>If this policy changes, the updated version will be posted at this URL. This policy is reviewed at least quarterly; the next scheduled review date is listed at the top.</p>
 
 <h2>Contact</h2>
 <p>For questions about this policy, contact: tchung7705@gmail.com</p>
