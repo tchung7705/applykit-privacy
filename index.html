@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ApplyKit Privacy Policy</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 700px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.6; }
+h1 { color: #3B82F6; }
+h2 { margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<h1>ApplyKit Privacy Policy</h1>
+<p><em>Last updated: May 22, 2026</em></p>
+
+<h2>Overview</h2>
+<p>ApplyKit is a Chrome extension that helps users track job applications by automatically capturing application data when they apply through supported job sites. This privacy policy explains how ApplyKit handles user data.</p>
+
+<h2>Data Collection and Storage</h2>
+<p>ApplyKit stores all application data—including job titles, company names, application status, notes, dates, and URLs—locally on the user's device using Chrome's local storage API (chrome.storage.local). This data is <strong>never</strong> transmitted to any server, third party, or external service.</p>
+
+<h2>Where ApplyKit Operates</h2>
+<p>ApplyKit's content scripts run only on the specific job sites it supports. As of this version, those are:</p>
+<ul>
+  <li>boards.greenhouse.io, job-boards.greenhouse.io</li>
+  <li>jobs.lever.co</li>
+  <li>jobs.ashbyhq.com, www.ashbyhq.com</li>
+  <li>www.linkedin.com/jobs/</li>
+  <li>www.indeed.com, indeed.com</li>
+  <li>*.myworkdayjobs.com</li>
+  <li>jobs.smartrecruiters.com</li>
+  <li>*.icims.com</li>
+</ul>
+<p>On these sites only, ApplyKit listens for clicks on Apply / Submit Application buttons and reads visible page metadata (job title, company name, posted URL). This data is stored locally on the user's device and not transmitted anywhere.</p>
+
+<h2>Data Transmission — Free vs Pro</h2>
+<p>The free version of ApplyKit makes <strong>zero</strong> network requests of its own. No analytics, no telemetry, no external API calls.</p>
+<p>The Pro version validates the user's license periodically (approximately once per week) by sending the following to ApplyKit's license server:</p>
+<ul>
+  <li>The user's license key</li>
+  <li>A randomly generated install identifier (used to enforce per-license activation limits)</li>
+</ul>
+<p>The license server stores only the license key and activation count. No application data, browsing history, or personally identifiable information is ever transmitted.</p>
+
+<h2>Data Sharing</h2>
+<p>ApplyKit does not share user data with third parties. Even for Pro users, the license server receives only the license key and install identifier described above—nothing about your job applications, the sites you visit, or who you are.</p>
+
+<h2>User Control</h2>
+<p>Users have full control over their data:</p>
+<ul>
+  <li>All application data is stored on the user's own device</li>
+  <li>Users can export their data as JSON at any time</li>
+  <li>Users can import data from a previous export</li>
+  <li>Users can delete all data through the extension's "Reset all data" feature</li>
+  <li>Pro users can deactivate their license at any time (which removes the local license record and notifies the license server)</li>
+  <li>Uninstalling the extension removes all associated data</li>
+</ul>
+
+<h2>Permissions</h2>
+<p>ApplyKit requests the following Chrome permissions, all used for the core functionality of the extension:</p>
+<ul>
+  <li><strong>storage:</strong> To save applications, settings, and license state locally on your device</li>
+  <li><strong>sidePanel:</strong> To open ApplyKit as a Chrome side panel when you select that option</li>
+  <li><strong>activeTab:</strong> To read the URL and title of your current tab when you open the popup, so ApplyKit can detect job pages on unsupported sites and offer to add them manually</li>
+  <li><strong>alarms:</strong> To schedule periodic license validation for Pro users</li>
+  <li><strong>Host permissions on the supported job sites listed above:</strong> To run the auto-capture content scripts that detect when you apply</li>
+</ul>
+<p>ApplyKit does <strong>not</strong> request blanket access to all websites. Host permissions are narrowly scoped to the supported job sites listed above.</p>
+
+<h2>Changes to This Policy</h2>
+<p>If this policy changes, the updated version will be posted at this URL.</p>
+
+<h2>Contact</h2>
+<p>For questions about this policy, contact: tchung7705@gmail.com</p>
+
+</body>
+</html>
